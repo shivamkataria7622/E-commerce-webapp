@@ -1,0 +1,26 @@
+.card{
+    height: 60vh ;
+    width: auto;
+    margin: 4rem;
+}
+
+.card-image{
+    height: 50vh;
+    width: 35vh;
+    border-radius: 8px;
+}
+.card-image:hover{
+    transform: scale(1.1);
+    transition: transform 0.5s;
+
+}
+
+.card-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    color: black;
+    cursor: pointer;
+}

@@ -1,9 +1,40 @@
-.MainDiv{
-    @apply  bg-red-900 h-screen;
-}
-.MainDiv{
-    color:red ;
-}
-h1{
-    color:green;
-}
+/* Main container to hold the video and content */
+.MainDiv {
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    overflow: hidden;
+  }
+  
+  /* Video container */
+  .VideoContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; /* Ensure video covers the full viewport height */
+    z-index: -1; /* Place video behind all content */
+  }
+  
+  /* Video styling */
+  .VideoBackground {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the video scales and covers the entire container */
+  }
+  
+  /* Navbar container */
+  .NavbarCont {
+    position: relative;
+    z-index: 10; /* Keep the navbar above the video */
+    width: 100%;
+  }
+  
+  /* Content container */
+  .Content {
+    position: relative;
+    z-index: 10; /* Keep the content above the video */
+    padding: 2rem;
+    color:white; /* Ensure text is readable against the video */
+  }
+  

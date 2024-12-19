@@ -1,8 +1,8 @@
 /* src/Nav.css */
 
 .navbar {
-   background-color: white;
-   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+   background-color: transparent;
+   box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
    padding: 1rem 1.5rem;
    width: 100%;
    z-index: 10;
@@ -20,6 +20,7 @@
  .navbar-logo {
    font-size: 1.5rem;
    font-weight: bold;
+   color: white;
  }
  
  .navbar-links {
@@ -32,13 +33,13 @@
  }
  
  .navbar-link {
-   color: #4B5563; /* Gray-600 */
+   color: #ffffff; /* Gray-600 */
    transition: color 0.3s;
    padding: 0.5rem 0;
  }
  
  .navbar-link:hover {
-   color: #1F2937; /* Gray-900 */
+   color: #3d3d3d; /* Gray-900 */
  }
  
  .dropdown-menu {
@@ -73,12 +74,12 @@
  }
  
  .icon-button {
-   color: #4B5563; /* Gray-600 */
+   color: #ffffff; /* Gray-600 */
    transition: color 0.3s;
  }
  
  .icon-button:hover {
-   color: #1F2937; /* Gray-900 */
+   color: #424242; /* Gray-900 */
  }
  
  .icon-badge {
@@ -86,7 +87,7 @@
    top: -0.5rem;
    right: -0.5rem;
    background-color: #EF4444; /* Red-500 */
-   color: white;
+   color: rgb(247, 247, 247);
    font-size: 0.75rem; /* Text-xs */
    border-radius: 9999px; /* Full rounded */
    width: 1rem; /* w-4 */

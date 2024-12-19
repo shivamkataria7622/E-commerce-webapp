@@ -1,0 +1,9 @@
+.collection-container {
+    min-height: 50vh;
+    width: 100%;
+    background-color: white;
+    display: flex;
+   
+    color:green !important;
+  }
+  
