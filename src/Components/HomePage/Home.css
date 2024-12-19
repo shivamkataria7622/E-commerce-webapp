@@ -1,0 +1,9 @@
+.MainDiv{
+    @apply  bg-red-900 h-screen;
+}
+.MainDiv{
+    color:red ;
+}
+h1{
+    color:green;
+}
