@@ -40,9 +40,10 @@ const Footer = () => {
           <h3 className="footer-heading">Payment Methods</h3>
           <p className="footer-paragraph">We accept payments via:</p>
           <div className="payment-icons">
-            <img src="https://openui.fly.dev/openui/24x24.svg?text=💳" alt="Credit Card" />
-            <img src="https://openui.fly.dev/openui/24x24.svg?text=💳" alt="Visa" />
-            <img src="https://openui.fly.dev/openui/24x24.svg?text=💳" alt="MasterCard" />
+            <img src="https://almostgods.com/wp-content/uploads/2021/12/mastercard-1.svg" alt="Credit Card" />
+            <img src="https://almostgods.com/wp-content/uploads/2021/12/upi2.svg" alt="Visa" />
+            <img src="https://almostgods.com/wp-content/uploads/2021/12/visa.svg" alt="MasterCard" />
+            <img src="	https://almostgods.com/wp-content/uploads/2021/12/paypal.svg" alt="MasterCard" />
           </div>
         
         </div>
@@ -64,6 +65,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
+      <span className="footer-copy">All rights reserved © 2024 ANOIR</span>
     </div>
   );
 };

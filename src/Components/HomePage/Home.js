@@ -2,16 +2,18 @@ import React from 'react';
 import Nav from "../Navbar/Nav";
 import CollectionCont from '../Collection/CollectionCont.js';
 import './Home.css';
+import Footer from '../Footer/Footer';
 
 function Home() {
   return (
+    <div>
     <div className='MaindivCont'>
     <div className="MainDiv">
       {/* Video Background */}
       <div className="VideoContainer">
         <video 
           className="VideoBackground" 
-          src="https://cdn.shopify.com/videos/c/o/v/0a505ac42d1245a4bc60b79b15d8c86b.mp4" 
+          src="https://cdn.shopify.com/videos/c/o/v/35277fd59fb54ff08c9256506133350c.mp4#t=0.1" 
           autoPlay 
           loop 
           muted
@@ -30,6 +32,8 @@ function Home() {
       
     </div>
     <CollectionCont/>
+    </div>
+    <Footer/>
     </div>
   );
 }

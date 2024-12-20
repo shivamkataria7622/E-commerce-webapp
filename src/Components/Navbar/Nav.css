@@ -1,13 +1,19 @@
 /* src/Nav.css */
 
 .navbar {
-   background-color: transparent;
-   box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
-   padding: 1rem 1.5rem;
-   width: 100%;
-   z-index: 10;
- }
- 
+  position: fixed; /* Changed from sticky to fixed for consistent behavior */
+  top: 0;
+  left: 0;
+  background-color: transparent; /* Start with transparent background */
+  padding: 1rem 1.5rem;
+  width: 100%;
+  z-index: 1000;
+  transition: background-color 0.3s ease; /* Smooth transition for background change */
+}
+/* .navbar.scrolled {
+  background-color: rgb(0, 0, 0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+} */
  .navbar-container {
    max-width: 1200px; /* Adjust as needed */
    margin: 0 auto;
@@ -18,11 +24,18 @@
  }
  
  .navbar-logo {
-   font-size: 1.5rem;
-   font-weight: bold;
-   color: rgb(0, 0, 0);
-   cursor: pointer;
- }
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: rgb(0, 0, 0); /* Start with white text for better visibility on video */
+}
+
+.navbar.scrolled .navbar-logo {
+  color: #747474; /* Change color when scrolled */
+}
+.navbar.scrolled .navbar-link {
+  color: #333; /* Change color when scrolled */
+}
  
  .navbar-links {
    display: flex;
@@ -97,3 +110,16 @@
    align-items: center;
    justify-content: center;
  }
+ @media (max-width: 768px) {
+  .navbar-container {
+    padding: 0 1rem;
+  }
+  
+  .navbar-links {
+    gap: 1rem;
+  }
+  
+  .navbar-icons {
+    gap: 0.5rem;
+  }
+}

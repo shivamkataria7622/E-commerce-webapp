@@ -62,3 +62,12 @@
     border-top: 1px solid black;
     margin-bottom: 20px;
   }
+
+  .footer-copy {
+   padding: 1%;
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1em;
+    color: #000000;
+  }
