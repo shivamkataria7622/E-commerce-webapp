@@ -1,10 +1,19 @@
 // src/Nav.js
 import React, { useState, useRef } from "react";
 import { Search, ShoppingCart, User } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import './Nav.css';
 
 
 function Nav() {
+  const navigate = useNavigate();
+  function loginHandler() {
+    navigate('Login/Signup');
+  }
+  function cartIconClickHandler() {
+    console.log("Cart Icon Clicked");
+    navigate('YourCart');
+  }
   const [activeDropdown, setActiveDropdown] = useState(null);
   const dropdownRef = useRef(null);
   const timeoutRef = useRef(null);
@@ -32,12 +41,14 @@ function Nav() {
       setActiveDropdown(null);
     }, 100); // Small delay to allow mouse to move to dropdown
   };
-
+  function logoClickHandler() {
+    navigate('/');
+  }
   return (
     <nav className="navbar">
       <div className="navbar-container">
         {/* Logo */}
-        <div className="navbar-logo">
+        <div className="navbar-logo" onClick={logoClickHandler}>
           ANOIR
         </div>
 
@@ -109,13 +120,13 @@ function Nav() {
           <button className="icon-button">
             <Search size={20} />
           </button>
-          <button className="icon-button relative">
+          <button className="icon-button relative" onClick={cartIconClickHandler}>
             <ShoppingCart size={20} />
             <span className="icon-badge">
               0
             </span>
           </button>
-          <button className="icon-button">
+          <button className="icon-button" onClick={loginHandler}>
             <User size={20} />
           </button>
         </div>

@@ -1,10 +1,14 @@
 import React from 'react';
+import { useNavigate } from "react-router-dom";
 import './Card.css'; // Assuming you save the CSS file as Card1.css
 
 function Card1(props) {
+  const navigate = useNavigate();
   function handleClick() {
     //console.log(props.price);
-    props.changeCart({price:props.price,id:props.id,imgsrc:props.imgsrc});
+    //props.changeCart({price:props.price,id:props.id,imgsrc:props.imgsrc});
+
+    navigate(`product/${props.id}`);
 
   }
   return (

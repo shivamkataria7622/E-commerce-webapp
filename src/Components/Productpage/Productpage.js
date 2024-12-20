@@ -1,12 +1,19 @@
 import React from 'react';
+import Navbar from '../Navbar/Nav';
+import { useParams } from "react-router-dom";
 import './Productpage.css'; // Import the new CSS file
+import Footer from '../Footer/Footer';
 
 const buttonClasses = 'product-button';
 const imageClasses = 'image-thumbnail';
 const textClasses = 'text-sm font-medium';
 
-const ProductDetail = () => {
+function ProductDetail(){
+  const { productId } = useParams();
+  console.log(productId);
   return (
+    <div>
+      <Navbar/>
     <div className="product-container product-container-md">
       <div className="image-container">
         <img
@@ -92,6 +99,8 @@ const ProductDetail = () => {
           
         </p>
       </div>
+    </div>
+    <Footer/>
     </div>
   );
 };
