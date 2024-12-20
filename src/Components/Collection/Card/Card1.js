@@ -3,19 +3,22 @@ import './Card.css'; // Assuming you save the CSS file as Card1.css
 
 function Card1(props) {
   function handleClick() {
-    console.log('Button clicked');
+    //console.log(props.price);
+    props.changeCart({price:props.price,id:props.id,imgsrc:props.imgsrc});
+
   }
   return (
-    <div className="card">
+    <div className="card" onClick={handleClick} value={props.price}>
       <img  
-        src="https://almostgods.com/wp-content/uploads/2024/12/Artboard-3-2.webp" 
+        src={props.imgsrc} 
         alt="Product" 
         className="card-image"
        onClick={handleClick}/>
       
       <div className="card-content">
         <h2 className="product-title">{props.title}</h2>
-        <p className="product-price">Rs 13999</p>
+        <p className="product-price">Rs {props.price}</p>
+        <p>{props.id}</p>
       </div>
     </div>
   );
