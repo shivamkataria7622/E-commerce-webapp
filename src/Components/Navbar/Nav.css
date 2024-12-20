@@ -20,7 +20,7 @@
  .navbar-logo {
    font-size: 1.5rem;
    font-weight: bold;
-   color: white;
+   color: rgb(0, 0, 0);
  }
  
  .navbar-links {
@@ -33,7 +33,7 @@
  }
  
  .navbar-link {
-   color: #ffffff; /* Gray-600 */
+   color: #050505; /* Gray-600 */
    transition: color 0.3s;
    padding: 0.5rem 0;
  }
@@ -74,7 +74,7 @@
  }
  
  .icon-button {
-   color: #ffffff; /* Gray-600 */
+   color: #000000; /* Gray-600 */
    transition: color 0.3s;
  }
  

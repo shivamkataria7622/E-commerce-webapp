@@ -1,0 +1,76 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  
+  .product-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 16px;
+  }
+  
+  .product-details {
+    flex: 1;
+  }
+  
+  .product-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 0 4px;
+  }
+  
+  .product-price,
+  .product-size {
+    color: #555;
+    font-size: 14px;
+  }
+  
+  .quantity-controls {
+    display: flex;
+    align-items: center;
+  }
+  
+  .button {
+    padding: 8px;
+    border: none;
+    background-color: #3d3d3d;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 0 4px;
+  }
+  
+  .button:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .quantity-input {
+    width: 40px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .delete {
+    background-color: #ffe5e5;
+    color: #e53e3e;
+  }
+  
+  .delete:hover {
+    background-color: #fcb1b1;
+  }
+  
+
+
+  

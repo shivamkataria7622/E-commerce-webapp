@@ -1,0 +1,120 @@
+/* ProductDetail.css */
+
+.product-container {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    background-color: var(--background-color);
+  }
+  
+  .product-container-md {
+    @media (min-width: 768px) {
+      flex-direction: row;
+    }
+  }
+  
+  .image-container {
+    width: 100%;
+  }
+  
+  .image-main {
+    width: 70%;
+    height: 80%;
+    border-radius: 0.1rem;
+    margin-left: 20%;
+  }
+  
+  .image-thumbnails {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+    margin-top: 1rem;
+    width: 60%;
+    margin-left: 20%;
+  }
+  
+  .image-thumbnail {
+    border-radius: 0.5rem;
+    cursor: pointer;
+  }
+  
+  .product-info {
+    width: 100%;
+    padding-left: 1.5rem;
+  }
+  
+  .product-title {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  
+  .product-price {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--primary-color);
+  }
+  
+  .product-tax {
+    font-size: 0.875rem;
+    color: var(--muted-foreground);
+  }
+  
+  .product-color
+  .product-size,
+  .product-material,
+  .product-quantity {
+    margin-top: 1rem;
+  }
+  
+  .product-button {
+    background-color: var(--secondary-color);
+    color: var(--secondary-foreground);
+    border-radius: 9999px;
+    padding: 0.25rem 1rem;
+    
+  }
+  
+  .product-button-primary {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    border-radius: 0.2rem;
+    width: 60%;
+    padding: 1rem;
+    border: 1px solid black;
+    font-weight: bolder;
+  }
+  .product-button-primary:hover{
+    border: 2px solid black;
+    
+  }
+  
+  .product-button-accent {
+    background-color: black;
+    color: white;
+    border-radius: 0.2rem;
+    width: 60%;
+    padding: 1rem;
+    border: 2px solid black;
+  }
+  .product-button-accent:hover{
+    font-size: 1.1rem; 
+  }
+  .payment-icons {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .payment-icons img {
+    height: 1.5rem;
+  }
+  
+  .product-description {
+    margin-top: 1rem;
+    font-size: 0.875rem;
+    color: var(--muted-foreground);
+  }
+  
+ .count{
+    display: flex;
+    
+ }
