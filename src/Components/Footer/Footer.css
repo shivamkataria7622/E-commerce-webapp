@@ -1,6 +1,7 @@
 .footer-container {
     color: var(--foreground-color, #000);
-    padding: 24px;
+    padding: 4%;
+    
   }
   
   .footer-grid {

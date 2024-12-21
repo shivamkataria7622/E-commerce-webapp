@@ -1,15 +1,18 @@
 /* ProductDetail.css */
 
 .product-container {
+    margin: 5rem auto 2rem;
     display: flex;
     flex-direction: column;
-    padding: 1.5rem;
+    padding: 1%;
     background-color: var(--background-color);
   }
   
-  .product-container-md {
-    @media (min-width: 768px) {
+  @media (min-width: 768px) {
+    .product-container-md {
       flex-direction: row;
+      padding: 1rem;
+      margin-left: 3%;
     }
   }
   
