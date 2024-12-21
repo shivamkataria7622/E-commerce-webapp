@@ -1,9 +1,9 @@
 
 import React, { useState } from 'react'; 
-import './Login.css'; // Importing the CSS file
+import './Signup.css'; // Importing the CSS file
 import TitleofuserCredentials from './TitleofuserCredentials';
 
-const LoginForm = () => {
+const Signup = () => {
   function submitHandler(event){
     event.preventDefault();
     let credentials=
@@ -26,28 +26,29 @@ const LoginForm = () => {
    return (
     <div className="login-container">
       <div className="login-card">
-          <TitleofuserCredentials/>  
-             <form>
+      <TitleofuserCredentials/>
+        <form>
           <div className="form-group">
-            <label className="form-label" htmlFor="email">Username or Email Address *</label>
+            <label className="form-label" htmlFor="email">Email Address *</label>
             <input className="form-input" type="text" id="email" placeholder="Enter your username or email" required />
           </div>
-          <div className="form-group">
-            <label className="form-label" htmlFor="password">Password *</label>
-            <input className="form-input" type="password" id="password" placeholder="Enter your password" required />
-          </div>
+         
+          <div  className='form-span'>
+          <span >A password will be sent to your email address.</span>
+          <p>Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our Privacy policy.</p>
           <div className="form-footer">
             <label className="checkbox-container">
               <input type="checkbox" className="checkbox-input" />
-              <span className="checkbox-label">Remember me</span>
+              <span className="checkbox-label">i agree to the terms & conditions</span>
             </label>
-            <a href="#" className="forgot-password">Lost your password?</a>
           </div>
-          <button className="form-button">LOGIN</button>
+          </div>
+         
+          <button className="form-button">REGISTER</button>
         </form>
       </div>
     </div>
   );
 };
 
-export default LoginForm;
+export default Signup;
