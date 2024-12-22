@@ -18,7 +18,7 @@ function Empty() {
 
         <p>Looks like you haven't added anything to your cart yet.</p>
 
-        <div className="button" onClick={ordernowClickHandler}>
+        <div className="emptybutton" onClick={ordernowClickHandler}>
           <button>Order Now</button>
         </div>
       </div>

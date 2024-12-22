@@ -6,17 +6,17 @@
     min-height:70vh ;
    
 }
-.button{
+.emptybutton{
     margin-top: 2rem;
     padding: 1rem 2rem;
-    border: 2px solid #000;
+    border: 1px solid #000;
     background: #000;
     color: #fff;
     font-size: 1rem;
-    font: bold;
-    border-radius: 15px;
+    font-weight:bold;
+   
 }
-.button:hover{
+.emptybutton:hover{
     background: #fff;
     color: #000;
 }

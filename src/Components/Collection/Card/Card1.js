@@ -16,7 +16,7 @@ function Card1(props) {
 
   }
   return (
-    <div className="card" onClick={handleClick} value={props.price}>
+    <div className="card1" onClick={handleClick} value={props.price}>
       <img  
         src={props.imgsrc} 
         alt="Product" 

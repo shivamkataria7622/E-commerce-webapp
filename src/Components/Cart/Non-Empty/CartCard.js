@@ -6,8 +6,8 @@ import Nonemptyfooter from './Nonemptyfooter';
 
 const ProductCard = () => {
   return (
-    <div className="card">
-      <div className="card-header">
+    <div className="card2">
+      <div className="card2-header">
         <img
           src="https://placehold.co/100x100"
           alt="Riding Denim Pants"
@@ -22,11 +22,12 @@ const ProductCard = () => {
           <button className="button decrement">−</button>
           <input type="number" value="1" className="quantity-input" />
           <button className="button increment">+</button>
-          <button className="button delete">
+          
+        </div>
+        <button className="button delete">
           <RiDeleteBin6Line />
 
           </button>
-        </div>
       </div>
      <Nonemptyfooter/>
     </div>

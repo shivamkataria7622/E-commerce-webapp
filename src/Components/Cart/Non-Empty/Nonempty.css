@@ -17,8 +17,11 @@
 }
 
 .final{
+    margin: auto;
     display: flex;
-   justify-content: space-evenly;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 80%;
 }
 .counter{
     display: flex;
