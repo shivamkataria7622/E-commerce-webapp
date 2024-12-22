@@ -9,27 +9,17 @@ import Cart from "./Components/Cart/CartCont"
 import Productpage from "./Components/Productpage/Productpage";
 import Signup from "./Components/UsersCredentials/Signup";
 
+
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Signup/>} />
+        <Route path="/" element={<Home/>} />
         <Route path="/product/:productId" element={<Productpage />} />
         <Route path="Login/Signup" element={<Login />} />
         <Route path="YourCart" element={<Cart/>} />
       </Routes>
     </Router>
-    // <div>
-
-    //   <Home/>
-    //   {/* <Login/> */}
-    //   {/* <Emptycart/> */}
-    //   {/* <Productpage/> */}
-    //   {/* <Empty/> */}
-    //   {/* <Nonempty/> */}
-
-    //   <Footer/>
-    // </div>
   );
 }
 

@@ -1,19 +1,16 @@
 .card-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* Ensure 2 cards per row */
-    gap: 20px;
+    gap: 10px;
     justify-content: center;
     padding: 20px;
     margin-top: 20px; /* Add margin to create gap from above container */
   }
   
   .card {
-    border: 1px solid #ccc;
-    border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s;
-    max-width: 300px;
+    max-width: 20%;
     margin: 40px auto;
   }
   
