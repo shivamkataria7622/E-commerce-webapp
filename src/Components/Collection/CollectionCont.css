@@ -1,4 +1,6 @@
 .collection-container {
+  position: relative;
+  z-index: 1;
     margin-top:3% ;
     background-color: rgb(255, 255, 255);
     display: flex;

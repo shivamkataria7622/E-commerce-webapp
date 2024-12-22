@@ -24,12 +24,6 @@ function Home() {
       <div className="NavbarCont">
         <Nav />
       </div>
-
-     
-      {/* <div className="Content">
-        <h1>Home Page</h1>
-      </div> */}
-      
     </div>
     <CollectionCont/>
     </div>

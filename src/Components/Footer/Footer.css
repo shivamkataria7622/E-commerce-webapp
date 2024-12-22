@@ -1,7 +1,7 @@
 .footer-container {
   color: var(--foreground-color, #000);
   padding: 4%;
- 
+  background-color: white;
   
   
  /* Ensure it stays above other content */
