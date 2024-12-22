@@ -1,6 +1,7 @@
 .footer-container {
   color: var(--foreground-color, #000);
   padding: 4%;
+ 
   
   
  /* Ensure it stays above other content */
@@ -22,6 +23,7 @@
   .footer-heading {
     font-weight: bold;
     font-size: 1.25rem;
+    /* font-family: poppins-600; */
   }
   
   .footer-list {

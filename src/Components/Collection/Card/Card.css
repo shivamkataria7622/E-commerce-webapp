@@ -25,13 +25,13 @@
     transform: scale(1.02); /* Apply the hover effect to the image */
 }
   .card-content {
-    padding: 16px;
-    text-align: center;
+    padding: 10px;
   }
   
   .product-title {
-    font-size: 1.5em;
-    margin: 0;
+   
+    margin: 1%;
+    color: black ;
   }
   
   .product-price {

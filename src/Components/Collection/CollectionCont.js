@@ -8,7 +8,7 @@ let Collections = [
   { id: Math.random().toString(), title: "Cargo", price: 1000 },
 ];
 let imageurl =
-  "https://bluorng.com/cdn/shop/files/IMG_7786.jpg?v=1728560463&width=360";
+  "https://bluorng.com/cdn/shop/files/DSC04337copy.jpg?v=1729680499&width=720";
 function CollectionContainer() {
   function CartHandler(event) {
     setAmount(prevAmount + event.price);
