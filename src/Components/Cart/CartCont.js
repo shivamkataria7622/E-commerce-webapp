@@ -3,6 +3,7 @@ import EmptyCart from "./Empty/Empty";
 import Nonempty from "./Non-Empty/Nonempty";
 import Navbar from "../Navbar/Nav";
 import Footer from "../Footer/Footer";
+import ErrorCard from "../UI/Error";
 import {useNavigate} from "react-router-dom";
 function CartCont() {
     let navigate=useNavigate();
@@ -17,7 +18,8 @@ function CartCont() {
         <Navbar/>
         {/* {NoProductinCart==0&&<EmptyCart/>}
         {NoProductinCart>0&&<Nonempty/>} */}
-        {todisplay}  
+        {todisplay} 
+       
         <Footer/>
     </div>
   )

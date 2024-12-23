@@ -1,6 +1,8 @@
 import React, { useState,useEffect } from "react";
 import "./CollectionCont.css";
 import Card1 from "./Card/Card1.js";
+import Loading from "../UI/Loading.js";
+import ErrorCard from "../UI/Error.js";
 // let Collections = [
 //   { id: Math.random().toString(), title: "Jeans", price: 700 },
 //   { id: Math.random().toString(), title: "Tshirt", price: 500 },
@@ -15,17 +17,32 @@ function CollectionContainer() {
   
   const [prevAmount, setAmount] = useState(0);
   let [prevCollections,setCollections]=useState([]);
+  let [prevIsLoading,setIsLoading]=useState(false);
   let [prevCollectionsInCart, setCollectionsInCart] = useState([{}]);
+  let [prevError,setError]=useState(null);
   
   useEffect(()=>{
     fetchProducts();
   },[])
 
   async function fetchProducts(){ 
-    let resposne=await fetch('https://fakestoreapi.com/products');
-    Products=await resposne.json();
-    setCollections(Products);
+    setIsLoading(true);
+    setError(null);
+    try{
+      // let resposne=await fetch('https://fakestoreapi.com/products');
+      let resposne=await fetch('http://172.16.112.40:8000/store/products/');
+      if(!resposne.ok){
+        throw new Error('Something went wrong'+resposne.status);
+      }
+      Products=await resposne.json();
+      setCollections(Products.results);
+  
+    }catch(error){
+      setError(error.message);
+      
   }
+  setIsLoading(false);
+}
   function CartHandler(event) {
     setAmount(prevAmount + event.price);
     console.log(prevAmount);
@@ -41,15 +58,17 @@ function CollectionContainer() {
   
   return (
     <div className="collection-container">
-      {prevCollections.map((tempObj) => (
+      {prevIsLoading && <Loading />}
+      {!prevIsLoading&&prevCollections.length>0&&prevCollections.map((tempObj) => (
         <Card1
-          id={tempObj.id}
-          title={tempObj.title}
+          id={tempObj.slug}
+          title={tempObj.name}
           price={tempObj.price}
           imgsrc={tempObj.image}
           changeCart={CartHandler}
         />
       ))}
+      {!prevIsLoading&&prevError&&<p><ErrorCard message={prevError}></ErrorCard></p>}
     </div>
   );
 }

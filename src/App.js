@@ -8,6 +8,7 @@ import Footer from "./Components/Footer/Footer";
 import Cart from "./Components/Cart/CartCont"
 import Productpage from "./Components/Productpage/Productpage";
 import Signup from "./Components/UsersCredentials/Signup";
+import Loading from "./Components/UI/Loading";
 
 
 function App() {
