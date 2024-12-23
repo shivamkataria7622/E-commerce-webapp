@@ -13,7 +13,11 @@
     margin: .1rem;
   }
   
-
+  .card1 {
+    flex: 1 1 calc(25% - 1rem); /* Each card takes up 25% of the container width minus some margin */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    margin: 0.5rem; /* Add some margin between cards */
+  }
   
   .card-image {
     width: 100%;
