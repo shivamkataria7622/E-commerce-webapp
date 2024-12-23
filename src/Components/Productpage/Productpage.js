@@ -1,23 +1,37 @@
-import React from 'react';
+import React,{useState,useEffect} from 'react';
 import Navbar from '../Navbar/Nav';
 import { useParams } from "react-router-dom";
 import './Productpage.css'; // Import the new CSS file
 import Footer from '../Footer/Footer';
-
 const buttonClasses = 'product-button';
 const imageClasses = 'image-thumbnail';
 const textClasses = 'text-sm font-medium';
 
 function ProductDetail(){
   const { productId } = useParams();
+  let [prevProduct,setProduct]=useState([]);
+  
+  async function call(){
+    let response = await fetch(`https://fakestoreapi.com/products/${productId}`);
+   let data = await response.json();
+    setProduct(data);
+  }
+  
+  
+  useEffect(()=>{
+    call();
+  },[productId]);
   console.log(productId);
+
+
+
   return (
     <div>
       <Navbar/>
     <div className="product-container product-container-md">
       <div className="image-container">
         <img
-          src="https://warpingtheories.com/cdn/shop/files/WarpingTheorie_20240359.jpg?v=1727330397&width=493"
+          src={prevProduct.image}
           alt="Couched Floral Shirt"
           className="image-main"
         />
@@ -46,8 +60,8 @@ function ProductDetail(){
       </div>
 
       <div className="product-info">
-        <h1 className="product-title">COUCHED FLORAL SHIRT</h1>
-        <p className="product-price">Rs. 6,990.00</p>
+        <h1 className="product-title">{prevProduct.title}</h1>
+        <p className="product-price">Rs.{prevProduct.price}</p>
         <p className="product-tax">Tax included. Shipping calculated at checkout.</p>
 
         
@@ -92,11 +106,7 @@ function ProductDetail(){
         </div>
 
         <p className="product-description">
-          Cotton-polyester blended shirt crafted with cut&sew panels and tonal thread tacks. The
-          couched flower patchwork is featured in...
-          lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut  
-          labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          
+          {prevProduct.description}
         </p>
       </div>
     </div>

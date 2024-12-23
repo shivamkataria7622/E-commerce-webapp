@@ -12,7 +12,7 @@ function Card1(props) {
     //console.log(props.price);
     //props.changeCart({price:props.price,id:props.id,imgsrc:props.imgsrc});
 
-    navigate(`product/${props.id}`);
+    navigate(`products/${props.id}`);
 
   }
   return (
