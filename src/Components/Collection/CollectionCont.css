@@ -5,5 +5,42 @@
   background-color: rgb(255, 255, 255);
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
+  cursor: pointer;
 }
+
+/* Default styles for larger screens */
+.collection-container > .card1 {
+  flex: 0 0 calc(25% - 1rem); /* 4 cards per row with gap */
+  margin-bottom: 1rem;
+}
+
+/* For small screens */
+@media (max-width: 600px) {
+  .collection-container {
+    justify-content: center; /* Center items if they don't fill the row */
+  }
+  .collection-container > .card1 {
+    flex: 0 0 calc(40% - .1rem); /* Adjust for 2 cards per row with gap */
+    
+    width: 100%; /* Ensure the image takes up the full width of the card */
+    height: 50%;
+  }
+  .collection-container > .card1 img {
+    width: 100%; /* Ensure the image takes up the full width of the card */
+    height: 50%; /* Maintain aspect ratio */
+  }
+  .collection-container > .product-tit {
+    font-size: 1rem; /* Adjust the font size as needed */
+  }
+  
+  /* For small screens */
+  @media (max-width: 490px) {
+    .collection-container > .product-tit {
+      font-size: 0.5rem; /* Adjust the font size for small screens */
+    }
+  }
+  }
+
+
 

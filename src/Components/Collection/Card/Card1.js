@@ -4,10 +4,7 @@ import './Card.css'; // Assuming you save the CSS file as Card1.css
 
 function Card1(props) {
   const navigate = useNavigate();
-  let renderColor='green';
-  if(props.price>500){
-    renderColor='red';
-  }
+
   function handleClick() {
     //console.log(props.price);
     //props.changeCart({price:props.price,id:props.id,imgsrc:props.imgsrc});
@@ -24,8 +21,8 @@ function Card1(props) {
        onClick={handleClick}/>
       
       <div className="card-content">
-        <h2 className="product-title" style={{color:renderColor }}>{props.title}</h2>
-        <p className="product-price">Rs {props.price}</p>
+        <h2 className="product-tit" >{props.title}</h2>
+        <p className="product-pri">Rs {props.price}</p>
         <p>{props.id}</p>
       </div>
     </div>
