@@ -36,7 +36,7 @@ function CollectionContainer() {
       }
       Products=await resposne.json();
       setCollections(Products);
-      console.log(Products);
+      //console.log(Products);
     }catch(error){
       setError(error.message);
       

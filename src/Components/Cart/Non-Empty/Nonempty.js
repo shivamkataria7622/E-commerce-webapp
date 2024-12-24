@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import "./Nonempty.css";
 import { RiDeleteBin6Line } from "react-icons/ri";
-import ProductCard from "./CartCard.js";
+import ProductCardinCart from "./CartCard.js";
 
-function Nonempty() {
+function Nonempty(props) {
   return (
     <div>
       <div className="Nonempty">
@@ -14,7 +14,15 @@ function Nonempty() {
       </div>
 
       <div className="final">
-        <ProductCard />
+      {props.Products.map((product) => (
+        <div key={product.key}>
+          <h2>{product.title}</h2>
+          <p>Price: {product.price}</p>
+          <p>Category: {product.category}</p>
+          <img src={product.image} alt={product.title} />
+          </div>
+      ))}
+
       </div>
     </div>
   );
