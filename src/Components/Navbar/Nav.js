@@ -8,11 +8,11 @@ import './Nav.css';
 function Nav() {
   const navigate = useNavigate();
   function loginHandler() {
-    navigate('Login/Signup');
+    navigate('/Login&Signup');
   }
   function cartIconClickHandler() {
     console.log("Cart Icon Clicked");
-    navigate('YourCart');
+    navigate('/yourCart');
   }
   const [activeDropdown, setActiveDropdown] = useState(null);
   const dropdownRef = useRef(null);
