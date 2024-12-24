@@ -29,21 +29,21 @@ function CollectionContainer() {
     setIsLoading(true);
     setError(null);
     try{
-      // let resposne=await fetch('https://fakestoreapi.com/products');
-      let resposne=await fetch('http://172.16.112.40:8000/store/products/');
+       let resposne=await fetch('https://fakestoreapi.com/products');
+      // let resposne=await fetch('http://172.16.112.40:8000/store/products/');
       if(!resposne.ok){
         throw new Error('Something went wrong'+resposne.status);
       }
       Products=await resposne.json();
-      setCollections(Products.results);
-  
+      setCollections(Products);
+      console.log(Products);
     }catch(error){
       setError(error.message);
       
   }
   setIsLoading(false);
 }
-  function CartHandler(event) {
+  function addtoCartHandler(event) {
     setAmount(prevAmount + event.price);
     console.log(prevAmount);
     let tempArr=[...prevCollectionsInCart,{
@@ -61,11 +61,12 @@ function CollectionContainer() {
       {prevIsLoading && <Loading />}
       {!prevIsLoading&&prevCollections.length>0&&prevCollections.map((tempObj) => (
         <Card1
-          id={tempObj.slug}
-          title={tempObj.name}
+          // id={tempObj.slug}
+          id={tempObj.id}
+          title={tempObj.title}
           price={tempObj.price}
           imgsrc={tempObj.image}
-          changeCart={CartHandler}
+          changeCart={addtoCartHandler}
         />
       ))}
       {!prevIsLoading&&prevError&&<p><ErrorCard message={prevError}></ErrorCard></p>}

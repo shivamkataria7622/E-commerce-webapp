@@ -16,18 +16,19 @@ function ProductDetail(){
   let [prevIsLoading,setIsLoading]=useState(false);
   let [prevError,setError]=useState(null);
   const [cartid1, setCartId] = useState(null);
-  async function call1() {
-    const response = await fetch('http://172.16.112.40:8000/store/carts/', { method: 'POST' });
-    const data = await response.json();
-    setCartId(data.id);
-  }
+  // async function call1() {
+  //   const response = await fetch('http://172.16.112.40:8000/store/carts/', { method: 'POST' });
+  //   const data = await response.json();
+  //   setCartId(data.id);
+  //}
   
 
   async function call(){
     setError(null);
     setIsLoading(true);
     try {
-      let response = await fetch(`http://172.16.112.40:8000/store/products/${productId}`);
+      // let response = await fetch(`http://172.16.112.40:8000/store/products/${productId}`);
+      let response=await fetch(`https://fakestoreapi.com/products/${productId}`);
       if (!response.ok) {
         throw new Error("Lund lagaye"+response.status);
       }
@@ -61,9 +62,9 @@ function ProductDetail(){
   useEffect(()=>{
     call();
   },[productId]);
-  useEffect(()=>{
-    call1();
-  },[productId])
+  // useEffect(()=>{
+  //   call1();
+  // },[productId])
   // console.log(productId);
 
 
@@ -157,7 +158,7 @@ function ProductDetail(){
         </div>
       </div>
       )}
-    {!prevIsLoading&&prevError&&<p><ErrorCard message='Saman khatam hai 20 minute ruko bagal vali dukaan mangata hun'></ErrorCard></p>}
+    {!prevIsLoading&&prevError&&<p><ErrorCard message='Saman khatam hai 20 minute ruko bagal vali dukaan se mangata hun'></ErrorCard></p>}
     
     <Footer/>
     </React.Fragment>
