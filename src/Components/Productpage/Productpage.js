@@ -48,7 +48,7 @@ function ProductDetail(){
       let tosend={product_id:prevProduct.id,quantity:1,size:3};
       console.log(JSON.stringify(tosend));
       let response=await fetch(`http://172.16.112.40:8000/store/carts/${cartid1}/items/`,{
-        method:'Post',
+        method:'POST',
         body:JSON.stringify(tosend),
         headers: {
           'Content-Type': 'application/json'
