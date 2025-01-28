@@ -47,14 +47,14 @@ console.log(temp1);
 
       setCart(temp1);
     }
-    let Todisplay;
+    let Todisplay = <EmptyCart />;
 
-    if(prevCart.length==0){
-      Todisplay=<EmptyCart/>  
-    }
-      else{
-        Todisplay=<Nonempty Products={prevCart}/ >;
-    }
+    // if(prevCart.length==0){
+    //   Todisplay=<EmptyCart/>  
+    // }
+    //   else{
+    //     Todisplay=<Nonempty Products={prevCart}/ >;
+    // }
     
   return(
     <div>

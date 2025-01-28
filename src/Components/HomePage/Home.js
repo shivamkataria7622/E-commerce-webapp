@@ -7,27 +7,27 @@ import Footer from '../Footer/Footer';
 function Home() {
   return (
     <div>
-    <div className='MaindivCont'>
-    <div className="MainDiv">
-      {/* Video Background */}
-      <div className="VideoContainer">
-        <video 
-          className="VideoBackground" 
-          src="https://cdn.shopify.com/videos/c/o/v/35277fd59fb54ff08c9256506133350c.mp4#t=0.1" 
-          autoPlay 
-          loop 
-          muted
-        ></video>
-      </div>
+      <div className='MaindivCont'>
+        <div className="MainDiv">
+          {/* Video Background */}
+          <div className="VideoContainer">
+            <video 
+              className="VideoBackground" 
+              src="https://cdn.shopify.com/videos/c/o/v/e7a211fec49e4737be811dcf07fe968a.mp4" 
+              autoPlay 
+              loop 
+              muted
+            ></video>
+          </div>
 
-      {/* Navbar */}
-      <div className="NavbarCont">
-        <Nav />
+          {/* Navbar */}
+          <div className="NavbarCont">
+            <Nav />
+          </div>
+        </div>
+        <CollectionCont />
       </div>
-    </div>
-    <CollectionCont/>
-    </div>
-    <Footer/>
+      <Footer />
     </div>
   );
 }

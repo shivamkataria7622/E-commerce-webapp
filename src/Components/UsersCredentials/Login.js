@@ -2,7 +2,8 @@
 import React, { useState } from 'react'; 
 import './Login.css'; // Importing the CSS file
 import TitleofuserCredentials from './TitleofuserCredentials';
-
+import Nav from '../Navbar/Nav';
+import Footer from '../Footer/Footer';
 const LoginForm = () => {
    async function submitHandler(event){
     event.preventDefault();
@@ -36,6 +37,8 @@ const LoginForm = () => {
     // console.log(event.target.value);
   }
    return (
+    <div> 
+      <Nav/>
     <div className="login-container">
       <div className="login-card">
           <TitleofuserCredentials/>  
@@ -59,7 +62,8 @@ const LoginForm = () => {
         </form>
       </div>
     </div>
-   
+    <Footer/>
+    </div>
   );
 };
 

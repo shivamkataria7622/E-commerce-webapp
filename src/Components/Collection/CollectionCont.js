@@ -1,67 +1,46 @@
-import React, { useState,useEffect } from "react";
+import React, { useState } from "react";
 import "./CollectionCont.css";
 import Card1 from "./Card/Card1.js";
 import Loading from "../UI/Loading.js";
 import ErrorCard from "../UI/Error.js";
-// let Collections = [
-//   { id: Math.random().toString(), title: "Jeans", price: 700 },
-//   { id: Math.random().toString(), title: "Tshirt", price: 500 },
-//   { id: Math.random().toString(), title: "Pajama", price: 300 },
-//   { id: Math.random().toString(), title: "Cargo", price: 1000 },
-// ];
-let Products=[];
+import Banner from "./Banner.js";
 
-let imageurl =
-  "https://bluorng.com/cdn/shop/files/DSC04337copy.jpg?v=1729680499&width=720";
+let hardcodedProducts = [
+  { id: Math.random().toString(), title: "Jeans", price: 700, image: "https://bluorng.com/cdn/shop/files/BACK.jpg?v=1735826679&width=823" },
+  { id: Math.random().toString(), title: "Jeans", price: 700, image: "https://bluorng.com/cdn/shop/files/Untitled-1front.jpg?v=1736147725&width=1946" },
+  { id: Math.random().toString(), title: "Jeans", price: 700, image: "https://bluorng.com/cdn/shop/files/BACK.jpg?v=1735826679&width=823" },
+  { id: Math.random().toString(), title: "Jeans", price: 700, image: "https://bluorng.com/cdn/shop/files/Untitled-1front.jpg?v=1736147725&width=1946" },
+  { id: Math.random().toString(), title: "Jeans", price: 700, image: "https://bluorng.com/cdn/shop/files/BACK.jpg?v=1735826679&width=823" },
+  { id: Math.random().toString(), title: "Jeans", price: 700, image: "https://bluorng.com/cdn/shop/files/Untitled-1front.jpg?v=1736147725&width=1946" },
+  { id: Math.random().toString(), title: "Jeans", price: 700, image: "https://bluorng.com/cdn/shop/files/BACK.jpg?v=1735826679&width=823" },
+  { id: Math.random().toString(), title: "Jeans", price: 700, image: "https://bluorng.com/cdn/shop/files/BACK.jpg?v=1735826679&width=823" },
+  { id: Math.random().toString(), title: "Jeans", price: 700, image: "https://bluorng.com/cdn/shop/files/BACK.jpg?v=1735826679&width=823" },
+  { id: Math.random().toString(), title: "Jeans", price: 700, image: "https://bluorng.com/cdn/shop/files/BACK.jpg?v=1735826679&width=823" },
+  { id: Math.random().toString(), title: "Jeans", price: 700, image: "https://bluorng.com/cdn/shop/files/BACK.jpg?v=1735826679&width=823" },
+  { id: Math.random().toString(), title: "Jeans", price: 700, image: "https://bluorng.com/cdn/shop/files/BACK.jpg?v=1735826679&width=823" },
+];
+
 function CollectionContainer() {
-  
   const [prevAmount, setAmount] = useState(0);
-  let [prevCollections,setCollections]=useState([]);
-  let [prevIsLoading,setIsLoading]=useState(false);
-  let [prevCollectionsInCart, setCollectionsInCart] = useState([{}]);
-  let [prevError,setError]=useState(null);
+  const [prevCollections, setCollections] = useState(hardcodedProducts);
+  const [prevCollectionsInCart, setCollectionsInCart] = useState([]);
+  const [prevError, setError] = useState(null);
   
-  useEffect(()=>{
-    fetchProducts();
-  },[])
-
-  async function fetchProducts(){ 
-    setIsLoading(true);
-    setError(null);
-    try{
-       let resposne=await fetch('https://fakestoreapi.com/products');
-      // let resposne=await fetch('http://172.16.112.40:8000/store/products/');
-      if(!resposne.ok){
-        throw new Error('Something went wrong'+resposne.status);
-      }
-      Products=await resposne.json();
-      setCollections(Products);
-      //console.log(Products);
-    }catch(error){
-      setError(error.message);
-      
-  }
-  setIsLoading(false);
-}
   function addtoCartHandler(event) {
-    setAmount(prevAmount + event.price);
-    console.log(prevAmount);
-    let tempArr=[...prevCollectionsInCart,{
-      id:event.id,
-      price:event.price,
-      imgsrc:event.imgsrc
-    }]
+    setAmount((prevAmount) => prevAmount + event.price);
+    let tempArr = [
+      ...prevCollectionsInCart,
+      { id: event.id, price: event.price, imgsrc: event.imgsrc },
+    ];
     setCollectionsInCart(tempArr);
-    console.log(prevCollectionsInCart);
   }
- 
   
   return (
     <div className="collection-container">
-      {prevIsLoading && <Loading />}
-      {!prevIsLoading&&prevCollections.length>0&&prevCollections.map((tempObj) => (
+      {/* First 4 products */}
+      {prevCollections.slice(0, 4).map((tempObj) => (
         <Card1
-          // id={tempObj.slug}
+          key={tempObj.id}
           id={tempObj.id}
           title={tempObj.title}
           price={tempObj.price}
@@ -69,7 +48,25 @@ function CollectionContainer() {
           changeCart={addtoCartHandler}
         />
       ))}
-      {!prevIsLoading&&prevError&&<p><ErrorCard message={prevError}></ErrorCard></p>}
+      
+      {/* Banner after 4 products */}
+      <div className="w-full">
+        <Banner />
+      </div>
+      
+      {/* Remaining products */}
+      {prevCollections.slice(4).map((tempObj) => (
+        <Card1
+          key={tempObj.id}
+          id={tempObj.id}
+          title={tempObj.title}
+          price={tempObj.price}
+          imgsrc={tempObj.image}
+          changeCart={addtoCartHandler}
+        />
+      ))}
+      
+      {prevError && <p><ErrorCard message={prevError}></ErrorCard></p>}
     </div>
   );
 }

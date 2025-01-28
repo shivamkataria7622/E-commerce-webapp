@@ -158,7 +158,7 @@ function ProductDetail(){
         </div>
       </div>
       )}
-    {!prevIsLoading&&prevError&&<p><ErrorCard message='Saman khatam hai 20 minute ruko bagal vali dukaan se mangata hun'></ErrorCard></p>}
+    {!prevIsLoading&&prevError&&<p><ErrorCard message='Your product will apear here'></ErrorCard></p>}
     
     <Footer/>
     </React.Fragment>

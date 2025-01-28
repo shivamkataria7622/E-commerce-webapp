@@ -65,7 +65,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <span className="footer-copy">All rights reserved © 2024 ANOIR</span>
+      <span className="footer-copy">All rights reserved © 2025 ANOIR</span>
     </div>
   );
 };

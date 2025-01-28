@@ -3,16 +3,19 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Home from "./Components/HomePage/Home";
 import Login from "./Components/UsersCredentials/Login";
-import Productcart from "./Components/Cart/Non-Empty/CartCard";
-import Footer from "./Components/Footer/Footer";
+//import Productcart from "./Components/Cart/Non-Empty/CartCard";
+//import Footer from "./Components/Footer/Footer";
 import Cart from "./Components/Cart/CartCont"
 import Productpage from "./Components/Productpage/Productpage";
-import Signup from "./Components/UsersCredentials/Signup";
-import Loading from "./Components/UI/Loading";
+//import Signup from "./Components/UsersCredentials/Signup";
+//import Loading from "./Components/UI/Loading";
+//import Nav from "./Components/Navbar/Nav";
+
 
 
 function App() {
   return (
+    <div>
     <Router>
       <Routes>
         <Route path="/" element={<Home/>} />
@@ -21,6 +24,7 @@ function App() {
         <Route path="/yourCart" element={<Cart/>} />
       </Routes>
     </Router>
+    </div>
   );
 }
 
