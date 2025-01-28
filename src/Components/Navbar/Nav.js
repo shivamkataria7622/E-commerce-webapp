@@ -10,6 +10,7 @@ function Nav() {
   const [activeDropdown, setActiveDropdown] = useState(null);
   const dropdownRef = useRef(null);
   const timeoutRef = useRef(null);
+  // 
 
   const apparelItems = ["Topwear", "Bottomwear", "Accessories"];
   const newInItems = ["Latest Collection", "Seasonal Trends", "Limited Edition", "Bestsellers"];
