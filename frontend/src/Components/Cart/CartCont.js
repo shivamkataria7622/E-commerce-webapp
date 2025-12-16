@@ -4,7 +4,8 @@ import Nonempty from "./Non-Empty/Nonempty";
 import Navbar from "../Navbar/Nav";
 import Footer from "../Footer/Footer";
 import ErrorCard from "../UI/Error";
-import Loading from "../UI/Loading";
+// import Loading from "../UI/Loading"; // Removed
+import Skeleton from "../UI/Skeleton/Skeleton";
 import { useNavigate } from "react-router-dom";
 import { API_BASE_URL } from "../../config";
 import toast from 'react-hot-toast';
@@ -109,7 +110,23 @@ function CartCont() {
   let Todisplay;
 
   if (isLoading) {
-    Todisplay = <Loading />;
+    Todisplay = (
+      <div className="cart-container" style={{ padding: '2rem' }}>
+        {[...Array(3)].map((_, i) => (
+          <div key={i} style={{ display: 'flex', gap: '1rem', marginBottom: '1.5rem' }}>
+            <Skeleton height="120px" width="120px" borderRadius="8px" />
+            <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+              <Skeleton height="24px" width="40%" borderRadius="4px" />
+              <Skeleton height="20px" width="20%" borderRadius="4px" />
+              <div style={{ marginTop: 'auto', display: 'flex', gap: '1rem' }}>
+                <Skeleton height="35px" width="100px" borderRadius="4px" />
+                <Skeleton height="35px" width="80px" borderRadius="4px" />
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    );
   } else if (prevCart.length === 0) {
     Todisplay = <EmptyCart />
   } else {

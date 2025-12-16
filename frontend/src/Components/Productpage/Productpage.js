@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from "react-router-dom";
 import ErrorCard from '../UI/Error';
 import Navbar from '../Navbar/Nav';
-import Loading from '../UI/Loading';
+// import Loading from '../UI/Loading'; // Removed
+import Skeleton from '../UI/Skeleton/Skeleton';
 import './Productpage.css';
 import Footer from '../Footer/Footer';
 import { API_BASE_URL } from "../../config";
@@ -86,7 +87,43 @@ function ProductDetail() {
     }
   };
 
-  if (loading) return <Loading />;
+  if (loading) {
+    return (
+      <React.Fragment>
+        <Navbar />
+        <div className="product-container product-container-md" style={{ marginTop: '80px', pointerEvents: 'none' }}>
+          <div className="image-container">
+            <Skeleton height="500px" width="100%" borderRadius="0.5rem" />
+            <div className="image-thumbnails" style={{ marginTop: '1rem', display: 'flex', gap: '10px' }}>
+              {[...Array(4)].map((_, i) => (
+                <Skeleton key={i} height="80px" width="80px" borderRadius="0.5rem" />
+              ))}
+            </div>
+          </div>
+          <div className="product-info">
+            <Skeleton height="40px" width="80%" borderRadius="4px" style={{ marginBottom: '1rem' }} />
+            <Skeleton height="30px" width="40%" borderRadius="4px" style={{ marginBottom: '2rem' }} />
+
+            <Skeleton height="20px" width="20%" borderRadius="4px" style={{ marginBottom: '1rem' }} />
+            <div style={{ display: 'flex', gap: '10px', marginBottom: '2rem' }}>
+              {[...Array(4)].map((_, i) => (
+                <Skeleton key={i} height="40px" width="60px" borderRadius="4px" />
+              ))}
+            </div>
+
+            <Skeleton height="20px" width="20%" borderRadius="4px" style={{ marginBottom: '1rem' }} />
+            <Skeleton height="50px" width="120px" borderRadius="4px" style={{ marginBottom: '2rem' }} />
+
+            <div style={{ display: 'flex', gap: '1rem' }}>
+              <Skeleton height="50px" width="150px" borderRadius="4px" />
+              <Skeleton height="50px" width="150px" borderRadius="4px" />
+            </div>
+          </div>
+        </div>
+        <Footer />
+      </React.Fragment>
+    );
+  }
   if (error) return <React.Fragment><Navbar /><div style={{ margin: '100px auto', textAlign: 'center' }}><ErrorCard message={error} /></div><Footer /></React.Fragment>;
   if (!product) return null;
 

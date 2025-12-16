@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./CollectionCont.css";
 import Card1 from "./Card/Card1.js";
-import Loading from "../UI/Loading.js";
+// import Loading from "../UI/Loading.js"; // Removed
+import Skeleton from "../UI/Skeleton/Skeleton";
 import ErrorCard from "../UI/Error.js";
 import Banner from "./Banner.js";
 // import axios from "axios";
@@ -61,7 +62,19 @@ function CollectionContainer() {
   }, [location.search, prevCollections]);
 
   if (isLoading) {
-    return <Loading />;
+    return (
+      <div className="collection-container">
+        {[...Array(8)].map((_, index) => (
+          <div className="card1" key={index} style={{ pointerEvents: 'none' }}>
+            <Skeleton height="320px" width="100%" borderRadius="0.5rem" />
+            <div className="card-content" style={{ marginTop: '1rem' }}>
+              <Skeleton height="24px" width="80%" borderRadius="4px" style={{ marginBottom: '0.5rem' }} />
+              <Skeleton height="20px" width="40%" borderRadius="4px" />
+            </div>
+          </div>
+        ))}
+      </div>
+    );
   }
 
   return (

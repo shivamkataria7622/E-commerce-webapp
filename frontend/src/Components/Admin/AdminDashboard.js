@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { API_BASE_URL } from '../../config';
 import './Admin.css';
-import Loading from '../UI/Loading';
+// import Loading from '../UI/Loading'; // Removed
+import Skeleton from '../UI/Skeleton/Skeleton';
 import Nav from '../Navbar/Nav';
 
 const AdminDashboard = () => {
@@ -48,7 +49,48 @@ const AdminDashboard = () => {
         }
     };
 
-    if (loading) return <Loading />;
+    if (loading) {
+        return (
+            <div>
+                <Nav />
+                <div className="admin-container">
+                    <div className="admin-header">
+                        <h1 className="admin-title">Product Management</h1>
+                        <Link to="/admin/add-product" className="add-btn">
+                            + Add New Product
+                        </Link>
+                    </div>
+
+                    <div className="overflow-x-auto">
+                        <table className="product-table">
+                            <thead>
+                                <tr>
+                                    <th>Image</th>
+                                    <th>Name</th>
+                                    <th>Price</th>
+                                    <th>Category</th>
+                                    <th>Stock</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {[...Array(5)].map((_, i) => (
+                                    <tr key={i}>
+                                        <td><Skeleton height="50px" width="50px" borderRadius="4px" /></td>
+                                        <td><Skeleton height="20px" width="150px" borderRadius="4px" /></td>
+                                        <td><Skeleton height="20px" width="80px" borderRadius="4px" /></td>
+                                        <td><Skeleton height="20px" width="80px" borderRadius="4px" /></td>
+                                        <td><Skeleton height="20px" width="50px" borderRadius="4px" /></td>
+                                        <td><Skeleton height="35px" width="80px" borderRadius="4px" /></td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        );
+    }
 
     return (
         <div>

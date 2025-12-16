@@ -24,7 +24,7 @@ const Signup = ({ onSwitchToLogin }) => {
     };
 
     try {
-      const response = await fetch(`${API_BASE_URL}/auth/signup`, { // Changed endpoint to /auth/signup
+      const response = await fetch(`${API_BASE_URL}/auth/register`, { // Changed endpoint to /auth/register
         method: "POST",
         headers: {
           "Content-Type": "application/json"
