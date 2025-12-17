@@ -12,11 +12,17 @@ import Productpage from "./Components/Productpage/Productpage";
 //import Loading from "./Components/UI/Loading";
 //import Nav from "./Components/Navbar/Nav";
 
-
-
 import AdminDashboard from "./Components/Admin/AdminDashboard";
 import AddProduct from "./Components/Admin/AddProduct";
 import Profile from "./Components/UsersCredentials/Profile";
+
+// Footer Pages
+import ContactUs from "./Components/FooterPages/ContactUs";
+import ShippingReturns from "./Components/FooterPages/ShippingReturns";
+import FAQ from "./Components/FooterPages/FAQ";
+import AboutUs from "./Components/FooterPages/AboutUs";
+import Stores from "./Components/FooterPages/Stores";
+import Careers from "./Components/FooterPages/Careers";
 
 function App() {
   return (
@@ -33,6 +39,14 @@ function App() {
           {/* Admin Routes */}
           <Route path="/admin" element={<AdminDashboard />} />
           <Route path="/admin/add-product" element={<AddProduct />} />
+
+          {/* Footer Page Routes */}
+          <Route path="/contact" element={<ContactUs />} />
+          <Route path="/shipping-returns" element={<ShippingReturns />} />
+          <Route path="/faq" element={<FAQ />} />
+          <Route path="/about" element={<AboutUs />} />
+          <Route path="/stores" element={<Stores />} />
+          <Route path="/careers" element={<Careers />} />
         </Routes>
       </Router>
     </div>

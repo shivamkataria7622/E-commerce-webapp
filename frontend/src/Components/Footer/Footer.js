@@ -4,12 +4,14 @@ import { GrInstagram } from "react-icons/gr";
 import { Linkedin } from 'lucide-react';
 import { FaYoutube } from "react-icons/fa6";
 
-const FooterLink = ({ href, text }) => {
+import { Link } from 'react-router-dom';
+
+const FooterLink = ({ to, text }) => {
   return (
     <li>
-      <a href={href} className="footer-link">
+      <Link to={to} className="footer-link">
         {text}
-      </a>
+      </Link>
     </li>
   );
 };
@@ -21,18 +23,18 @@ const Footer = () => {
         <div className="footer-column">
           <h3 className="footer-heading">Assistance</h3>
           <ul className="footer-list">
-            <FooterLink href="#" text="Contact Us" />
-            <FooterLink href="#" text="Shipping & Return Policy" />
-            <FooterLink href="#" text="FAQ" />
+            <FooterLink to="/contact" text="Contact Us" />
+            <FooterLink to="/shipping-returns" text="Shipping & Return Policy" />
+            <FooterLink to="/faq" text="FAQ" />
           </ul>
         </div>
 
         <div className="footer-column">
           <h3 className="footer-heading">Company</h3>
           <ul className="footer-list">
-            <FooterLink href="#" text="About Us" />
-            <FooterLink href="#" text="Stores" />
-            <FooterLink href="#" text="Careers" />
+            <FooterLink to="/about" text="About Us" />
+            <FooterLink to="/stores" text="Stores" />
+            <FooterLink to="/careers" text="Careers" />
           </ul>
         </div>
 

@@ -4,7 +4,7 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
-  transition: transform 0.2s;
+  /* Removed transition from container */
 }
 
 .card-image {
@@ -13,11 +13,13 @@
   object-fit: cover;
   cursor: pointer;
   background-color: #f0f0f0;
-  /* placeholder bg */
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  /* Smooth ease-out */
 }
 
 .card1:hover .card-image {
-  transform: scale(1.02);
+  transform: scale(1.05);
+  /* Slightly more pronounced zoom */
 }
 
 .card-content {
