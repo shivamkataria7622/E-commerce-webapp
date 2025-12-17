@@ -79,9 +79,9 @@ function Nav() {
                 onMouseLeave={handleMouseLeave}
                 onClick={() => toggleDropdown('apparel')}
               >
-                <a href="#" className="navbar-link">
+                <span className="navbar-link" style={{ cursor: 'pointer' }}>
                   Apparel
-                </a>
+                </span>
               </div>
               {activeDropdown === 'apparel' && (
                 <div
@@ -91,9 +91,9 @@ function Nav() {
                   className="dropdown-menu"
                 >
                   {apparelItems.map((item, index) => (
-                    <a key={index} href="#" className="dropdown-item">
+                    <span key={index} className="dropdown-item" style={{ cursor: 'pointer' }}>
                       {item}
-                    </a>
+                    </span>
                   ))}
                 </div>
               )}
@@ -107,9 +107,9 @@ function Nav() {
                 onMouseLeave={handleMouseLeave}
                 onClick={() => toggleDropdown('newIn')}
               >
-                <a href="#" className="navbar-link">
+                <span className="navbar-link" style={{ cursor: 'pointer' }}>
                   New In
-                </a>
+                </span>
               </div>
               {activeDropdown === 'newIn' && (
                 <div
@@ -119,9 +119,9 @@ function Nav() {
                   className="dropdown-menu"
                 >
                   {newInItems.map((item, index) => (
-                    <a key={index} href="#" className="dropdown-item">
+                    <span key={index} className="dropdown-item" style={{ cursor: 'pointer' }}>
                       {item}
-                    </a>
+                    </span>
                   ))}
                 </div>
               )}
@@ -167,64 +167,7 @@ function Nav() {
 
           </div>
 
-          {/* Navigation Links */}
-          <div className="navbar-links">
-            {/* Apparel Dropdown */}
-            <div className="dropdown">
-              <div
-                className="dropdown-trigger"
-                onMouseEnter={() => handleMouseEnter('apparel')}
-                onMouseLeave={handleMouseLeave}
-                onClick={() => toggleDropdown('apparel')}
-              >
-                <a href="#" className="navbar-link">
-                  Apparel
-                </a>
-              </div>
-              {activeDropdown === 'apparel' && (
-                <div
-                  ref={dropdownRef}
-                  onMouseEnter={() => handleMouseEnter('apparel')}
-                  onMouseLeave={handleMouseLeave}
-                  className="dropdown-menu"
-                >
-                  {apparelItems.map((item, index) => (
-                    <a key={index} href="#" className="dropdown-item">
-                      {item}
-                    </a>
-                  ))}
-                </div>
-              )}
-            </div>
 
-            {/* New In Dropdown */}
-            <div className="dropdown">
-              <div
-                className="dropdown-trigger"
-                onMouseEnter={() => handleMouseEnter('newIn')}
-                onMouseLeave={handleMouseLeave}
-                onClick={() => toggleDropdown('newIn')}
-              >
-                <a href="#" className="navbar-link">
-                  New In
-                </a>
-              </div>
-              {activeDropdown === 'newIn' && (
-                <div
-                  ref={dropdownRef}
-                  onMouseEnter={() => handleMouseEnter('newIn')}
-                  onMouseLeave={handleMouseLeave}
-                  className="dropdown-menu"
-                >
-                  {newInItems.map((item, index) => (
-                    <a key={index} href="#" className="dropdown-item">
-                      {item}
-                    </a>
-                  ))}
-                </div>
-              )}
-            </div>
-          </div>
         </div>
       </div>
     </nav>

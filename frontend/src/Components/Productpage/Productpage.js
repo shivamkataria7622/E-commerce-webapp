@@ -94,7 +94,7 @@ function ProductDetail() {
         <div className="product-container product-container-md" style={{ marginTop: '80px', pointerEvents: 'none' }}>
           <div className="image-container">
             <Skeleton height="500px" width="100%" borderRadius="0.5rem" />
-            <div className="image-thumbnails" style={{ marginTop: '1rem', display: 'flex', gap: '10px' }}>
+            <div className="image-thumbnails" style={{ marginTop: '1rem' }}>
               {[...Array(4)].map((_, i) => (
                 <Skeleton key={i} height="80px" width="80px" borderRadius="0.5rem" />
               ))}

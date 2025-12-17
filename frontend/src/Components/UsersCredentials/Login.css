@@ -138,3 +138,30 @@
   background: none;
   border: none;
 }
+
+@media (max-width: 600px) {
+  .login-container {
+    padding: 1rem;
+    align-items: flex-start;
+    /* Prevent vertical centering overlapping on small screens if keyboard opens */
+    padding-top: 4rem;
+    /* Add top padding from navbar */
+  }
+
+  .login-card {
+    height: auto;
+    /* Allow auto height */
+    width: 100%;
+    padding: 1.5rem;
+    box-shadow: none;
+    /* simpler look on mobile */
+    background-color: transparent;
+    /* Or keep white but ensure contrast */
+  }
+
+  .form-input {
+    padding: 0.75rem;
+    /* Larger touch target */
+    font-size: 1rem;
+  }
+}

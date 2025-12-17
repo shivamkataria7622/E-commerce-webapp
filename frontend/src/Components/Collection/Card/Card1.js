@@ -14,16 +14,15 @@ function Card1(props) {
   }
   return (
     <div className="card1" onClick={handleClick} value={props.price}>
-      <img  
-        src={props.imgsrc} 
-        alt="Product" 
+      <img
+        src={props.imgsrc}
+        alt="Product"
         className="card-image"
-       onClick={handleClick}/>
-      
+        onClick={handleClick} />
+
       <div className="card-content">
         <h2 className="product-tit" >{props.title}</h2>
         <p className="product-pri">Rs {props.price}</p>
-        <p>{props.id}</p>
       </div>
     </div>
   );

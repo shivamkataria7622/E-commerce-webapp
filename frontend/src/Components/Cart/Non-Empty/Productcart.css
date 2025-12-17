@@ -1,76 +1,104 @@
-.card2 {  
-    padding: 30px;
-    background-color: #fff;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+.card2 {
+  padding: 30px;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card2-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.product-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 16px;
+}
+
+.product-details {
+  flex: 1;
+}
+
+.product-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0 0 4px;
+}
+
+.product-price,
+.product-size {
+  color: #555;
+  font-size: 14px;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  border: 1px solid #cecece;
+  margin-right: 1%;
+}
+
+.button {
+  padding: 8px 16px;
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+.button:hover {
+  background-color: #e0e0e0;
+}
+
+.quantity-input {
+  width: 40px;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.delete {
+  background-color: #ffe5e5;
+  color: #e53e3e;
+}
+
+.delete:hover {
+  background-color: #fcb1b1;
+}
+
+@media (max-width: 600px) {
+  .card2 {
+    padding: 1rem;
   }
-  
+
   .card2-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 16px;
+    flex-wrap: wrap;
+    gap: 1rem;
   }
-  
+
   .product-image {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-right: 16px;
+    width: 80px;
+    height: 80px;
+    margin-right: 0.5rem;
   }
-  
+
   .product-details {
-    flex: 1;
+    width: calc(100% - 100px);
+    /* Fill remaining space next to image */
+    margin-right: 0;
   }
-  
-  .product-title {
-    font-size: 18px;
-    font-weight: bold;
-    margin: 0 0 4px;
-  }
-  
-  .product-price,
-  .product-size {
-    color: #555;
-    font-size: 14px;
-  }
-  
+
   .quantity-controls {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    border: 1px solid #cecece;
-    margin-right: 1%;
+    margin: 0;
+    gap: 1rem;
   }
-  
-  .button {
-    padding: 8px 16px;
-    background-color: #f0f0f0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  
-  .button:hover {
-    background-color: #e0e0e0;
-  }
-  
-  .quantity-input {
-    width: 40px;
-    text-align: center;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-  }
-  
-  .delete {
-    background-color: #ffe5e5;
-    color: #e53e3e;
-  }
-  
-  .delete:hover {
-    background-color: #fcb1b1;
-  }
-  
 
-
-  
+  .button.delete {
+    margin-left: auto;
+  }
+}

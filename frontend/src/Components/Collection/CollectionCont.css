@@ -1,46 +1,40 @@
 .collection-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+  /* Reduced gap */
+  padding: 0.5rem;
+  /* Reduced padding */
+  max-width: 100%;
+  /* Allow full width */
+  margin: 0;
+  background-color: white;
   position: relative;
-  z-index: 1;
-  padding: 3rem 1rem;
-  background-color: rgb(255, 255, 255);
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  cursor: pointer;
+  z-index: 100;
+  /* Ensure it scrolls over the fixed video */
 }
 
-/* Default styles for larger screens */
-.collection-container > .card1 {
-  flex: 0 0 calc(25% - 1rem); /* 4 cards per row with gap */
-  margin-bottom: 1rem;
-}
-
-/* For small screens */
-@media (max-width: 600px) {
+@media (min-width: 768px) {
   .collection-container {
-    justify-content: center; /* Center items if they don't fill the row */
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0.5rem;
+    /* Minimal padding */
+    gap: 0.5rem;
+    /* Minimal gap */
+    max-width: 100%;
+    /* Full width */
+    margin: 0;
   }
-  .collection-container > .card1 {
-    flex: 0 0 calc(40% - .1rem); /* Adjust for 2 cards per row with gap */
-    
-    width: 100%; /* Ensure the image takes up the full width of the card */
-    height: 50%;
-  }
-  .collection-container > .card1 img {
-    width: 100%; /* Ensure the image takes up the full width of the card */
-    height: 50%; /* Maintain aspect ratio */
-  }
-  .collection-container > .product-tit {
-    font-size: 1rem; /* Adjust the font size as needed */
-  }
-  
-  /* For small screens */
-  @media (max-width: 490px) {
-    .collection-container > .product-tit {
-      font-size: 0.5rem; /* Adjust the font size for small screens */
-    }
-  }
-  }
+}
 
+@media (min-width: 1024px) {
+  .collection-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
 
-
+/* Ensure no flex conflicts */
+.collection-container>.card1 {
+  width: 100%;
+  margin: 0;
+}

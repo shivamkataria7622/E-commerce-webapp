@@ -10,13 +10,9 @@ import { API_BASE_URL } from "../../config";
 
 import { useLocation } from "react-router-dom";
 
-let hardcodedProducts = [
-  { id: Math.random().toString(), title: "Jeans", price: 700, image: "https://bluorng.com/cdn/shop/files/BACK.jpg?v=1735826679&width=823" },
-  // Add more hardcoded products here...
-];
 
 function CollectionContainer() {
-  const [prevAmount, setAmount] = useState(0);
+  // const [prevAmount, setAmount] = useState(0); 
   const [prevCollections, setCollections] = useState([]);
   const [filteredCollections, setFilteredCollections] = useState([]);
   const [prevError, setError] = useState(null);
@@ -28,7 +24,7 @@ function CollectionContainer() {
     try {
       setError(null);
       setCollections([]);
-      setAmount(0);
+      // setAmount(0); // Removed unused
       setIsLoading(true);
       let response = await fetch(`${API_BASE_URL}/products`);
       let data = await response.json();
@@ -95,8 +91,8 @@ function CollectionContainer() {
         </div>
       )}
 
-      {/* Banner after 4 products */}
-      <div className="w-full">
+      {/* Banner at the bottom */}
+      <div style={{ gridColumn: '1 / -1', width: '100%' }}>
         <Banner />
       </div>
 

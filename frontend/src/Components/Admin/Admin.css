@@ -179,3 +179,33 @@
     opacity: 0.7;
     cursor: not-allowed;
 }
+
+.overflow-x-auto {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+@media (max-width: 768px) {
+    .admin-container {
+        padding: 2rem 1rem;
+    }
+
+    .admin-header {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+
+    .admin-title {
+        font-size: 1.5rem;
+    }
+
+    .add-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .form-card {
+        padding: 1.5rem;
+    }
+}
