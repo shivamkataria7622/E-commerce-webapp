@@ -78,6 +78,8 @@ function ProductDetail() {
         } else {
           toast.success("Item added to cart!");
         }
+        // Dispath event to update navbar counter
+        window.dispatchEvent(new Event('cartUpdated'));
       } else {
         toast.error(result.message || "Failed to add to cart");
       }

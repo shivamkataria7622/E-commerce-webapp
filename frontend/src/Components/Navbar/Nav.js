@@ -1,8 +1,9 @@
 // src/Nav.js
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Search, ShoppingCart, User, Menu, X } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import './Nav.css';
+import { API_BASE_URL } from "../../config";
 
 function Nav() {
   const navigate = useNavigate();
@@ -10,12 +11,52 @@ function Nav() {
   const [activeDropdown, setActiveDropdown] = useState(null);
   const dropdownRef = useRef(null);
   const timeoutRef = useRef(null);
-  // 
+  const isLoggedIn = !!localStorage.getItem('token');
+
+  // Cart Counter Logic
+  // State for cart count
+  const [cartCount, setCartCount] = useState(0);
+
+  const updateCartCount = async () => {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      setCartCount(0);
+      return;
+    }
+    try {
+      // Assuming GET /cart returns the full cart, we count items
+      // Or if there is a specific /cart/count endpoint, use that. 
+      // Using /cart based on CartCont.js logic:
+      const response = await fetch(`${API_BASE_URL}/cart`, {
+        headers: { 'Authorization': `Bearer ${token}` }
+      });
+      const data = await response.json();
+      if (data.success && data.cart && data.cart.items) {
+        setCartCount(data.cart.items.length);
+      } else {
+        setCartCount(0);
+      }
+    } catch (err) {
+      console.error("Failed to fetch cart count", err);
+    }
+  };
+
+  useEffect(() => {
+    updateCartCount(); // Fetch on mount
+
+    const handleCartUpdate = () => {
+      updateCartCount();
+    };
+
+    window.addEventListener('cartUpdated', handleCartUpdate);
+    return () => {
+      window.removeEventListener('cartUpdated', handleCartUpdate);
+    };
+  }, [isLoggedIn]); // Re-run if login state 'conceptually' changes, though isLoggedIn computed var doesn't trigger effect by itself usually. 
+  // Better to just depend on empty array as event listener handles updates, and maybe trigger on location change if we want. 
 
   const apparelItems = ["Topwear", "Bottomwear", "Accessories"];
   const newInItems = ["Latest Collection", "Seasonal Trends", "Limited Edition", "Bestsellers"];
-
-  const isLoggedIn = !!localStorage.getItem('token');
 
   function loginHandler() {
     if (isLoggedIn) {
@@ -154,7 +195,7 @@ function Nav() {
                 <div className="icon-with-text">
                   <ShoppingCart size={20} />
                   {/* <span className="icon-text">Cart</span> */}
-                  <span className="icon-badge">0</span>
+                  {cartCount > 0 && <span className="icon-badge">{cartCount}</span>}
                 </div>
               </button>
               <button className="icon-button" onClick={loginHandler}>

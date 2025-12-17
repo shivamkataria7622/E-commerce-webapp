@@ -78,6 +78,7 @@ function CartCont() {
       const data = await response.json();
       if (data.success) {
         fetchCartItems(); // Reload cart
+        window.dispatchEvent(new Event('cartUpdated'));
       } else {
         toast.error(data.message);
       }
@@ -98,6 +99,7 @@ function CartCont() {
       const data = await response.json();
       if (data.success) {
         fetchCartItems(); // Reload cart
+        window.dispatchEvent(new Event('cartUpdated'));
         toast.success("Item removed from cart");
       } else {
         toast.error(data.message);
